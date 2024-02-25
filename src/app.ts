@@ -9,6 +9,9 @@ const app = express();
 app.use(express.json());
 
 // Tambahkan rute tanpa otentikasi
+app.use('/', (req, res) => {
+    res.send('Hello, World!');
+});
 app.use('/user', userRoutes);
 app.use('/menu', menuRoutes);
 app.use('/order', orderRoutes);
